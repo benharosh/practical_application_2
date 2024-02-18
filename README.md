@@ -1,6 +1,7 @@
 # Practical Application 2 - Used Cars Price Prediction
 
 [Notebook link](https://github.com/benharosh/practical_application_2/blob/main/Vehicles.ipynb)
+
 [Github Dev notebook link](https://github.dev/benharosh/practical_application_2/blob/main/Vehicles.ipynb)
 
 **OVERVIEW**
