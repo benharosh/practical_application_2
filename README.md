@@ -20,7 +20,7 @@ After considering the business understanding, we want to get familiar with our d
 
 * Data has 426K records
 * Data has 3 numerical and 13 categorical columns
-* Data contain many rows with NaN values. 7 columns are missing moire than 20% of their values
+* Data contain many rows with NaN values. 7 columns are missing more than `20%` of their values
 * Over 90% of cars are prices between `500` to `100,000` USD
 * `price` data is skewed and we might want to work with the price log that shows a better uniform distribution
 * There are many `price` outliers - over 35K records with price=0 and some cars with prices ober 1 billion dollar
@@ -39,10 +39,24 @@ After considering the business understanding, we want to get familiar with our d
 * I removed rows that were missing more than 4 values out of the coluns that showed the highest missing values - `condition`, `paint_color`, `drive`, `cylinders` and `type` columns
 * I removed rows that contained `other` value and treated it as a missing value (NaN)
 * I removed NaN values for colums with less than 4% of missing values `year`, `odometer`, `manufacturer`, `fuel`, `transmission` . For `year`, `odometer` it made a very good sense because these columns were very highly correlated to the price and it didn't make sense to randomly impute them.
+
+#### Data imputation approach
 * I imputed the missing data for the remained NaNs with `RandomSampleImputer`. I chose this imputer because it's fast and keeping the same distribution of data before and after imputation, which is very important when imputing 20-30% of missing data.
 * After cleaning, and NaNs imputation, we were left with ~146K rows - `34.4%` of the original data set.
 
-### Modelling:
+#### Removing all missing values approach
+ I wanted to compare the performance of model that were built on the imputated data to models that we'll built on top of data without imputation - we will only use rows that don't contain NaN or missing values (as the other value). The logic behind this approach, is that since the original data set included many NaNs for many columns, the imputation process generated big chunk of syntetic data values, that might affect the prediction results.
 
+* Removed NaN values for all colums that contained NaN values.
+* After cleaning, and NaNs imputation, we were left with ~146K rows - `34.4%` of the original data set
+* I removed rows that contained `other` value and treated it as a missing value (NaN)
+* We were left with 65K records after the data cleanup, which are `15.2%` from the original data set 
+
+
+### Modelling:
+With our final datasets in hand - the one with data imputation, and the one with remove all NaNs - we'll now build some models. We'll build a number of different regression models (Ridge, LinearRegression and Lasso) with the price as the target. In building the models, we'll explore different hyper parameters and cross-validate our findings with K-Fold cros-validation on the training data. We'll also conduct a Holdout cross-validation on the best model the K-folded suggested with different sizes of hold-out set (80/20, 72/25, 70/30).
+We'll also explore feature selection and compare model performance results.
+
+![](images/holdout-crossvalidation.png)
 
 ### Findings
