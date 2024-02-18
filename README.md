@@ -1,12 +1,15 @@
-# Practical Application 2 - Used Cars
+# Practical Application 2 - Used Cars Price Prediction
+
+[Notebook link](https://github.com/benharosh/practical_application_2/blob/main/Vehicles.ipynb)
+[Github Dev notebook link](https://github.dev/benharosh/practical_application_2/blob/main/Vehicles.ipynb)
 
 **OVERVIEW**
 
-In this application, you will explore a dataset from kaggle. The original dataset contained information on 3 million used cars. The provided dataset contains information on 426K cars to ensure speed of processing.  Your goal is to understand what factors make a car more or less expensive.  As a result of your analysis, you should provide clear recommendations to your client -- a used car dealership -- as to what consumers value in a used car.
+In this application, we will explore a dataset from kaggle. The original dataset contained information on 3 million used cars. The provided dataset contains information on 426K cars to ensure speed of processing.  The goal is to understand what factors make a car more or less expensive.  As a goal we should provide clear recommendations to your client -- a used car dealership -- as to what consumers value in a used car.
 
 ### Business Understanding
 
-From a business perspective, we are tasked with identifying key drivers for used car prices.  In the CRISP-DM overview, we are asked to convert this business framing to a data problem definition.  Using a few sentences, reframe the task as a data task with the appropriate technical vocabulary.
+From a business perspective, we are tasked with identifying key drivers for used car prices.  In the CRISP-DM overview, we are asked to convert this business framing to a data problem definition. 
 
  Business Objectives:
  * Dealerships want identify what features in used cars will drive the price of the car up
@@ -20,7 +23,7 @@ From a business perspective, we are tasked with identifying key drivers for used
  
 ### Data Understanding
 
-After considering the business understanding, we want to get familiar with our data.  Write down some steps that you would take to get to know the dataset and identify any quality issues within.  Take time to get to know the dataset and explore what information it contains and how this could be used to inform your business understanding.
+After considering the business understanding, we want to get familiar with our data.  We'll explore the steps that we would take to get to know the dataset and identify any quality issues within. 
 
 * Data has 426K records
 * Data has 3 numerical and 13 categorical columns
