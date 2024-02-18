@@ -60,3 +60,11 @@ We'll also explore feature selection and compare model performance results.
 ![](images/holdout-crossvalidation.png)
 
 ### Findings
+From the above results, the data shows that the main features that drive the car price were: year, odometer, fuel type, number of cylinders and type of the car are the most important features for predicting car price.
+
+Year and odometer were the most dominant features, so when looking at buying used cars for the delaership, we'd recommend buying newer cars and car with low odometer.
+We'd also stay away from cars with high odometer and old cars (older than 10 years and up until 1980).
+
+For collector cars (older than 1970), it's very hard to predict their price based on the year (the correlation between year and price is very weak). Hence, odometer and condition should play a bigger role.
+
+Data also show that number of cylinders (more cylinders the higher the price), and type of the car (4wd) and the fuel type (diesel), play a role with driving the price up, so it's worth highlighting these featues when selling a used car, and pay attention to these details when pricing used cars. 
