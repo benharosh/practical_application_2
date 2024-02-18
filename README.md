@@ -4,7 +4,7 @@
 
 In this application, you will explore a dataset from kaggle. The original dataset contained information on 3 million used cars. The provided dataset contains information on 426K cars to ensure speed of processing.  Your goal is to understand what factors make a car more or less expensive.  As a result of your analysis, you should provide clear recommendations to your client -- a used car dealership -- as to what consumers value in a used car.
 
-#### Business Understanding
+### Business Understanding
 
 From a business perspective, we are tasked with identifying key drivers for used car prices.  In the CRISP-DM overview, we are asked to convert this business framing to a data problem definition.  Using a few sentences, reframe the task as a data task with the appropriate technical vocabulary.
 
@@ -13,6 +13,10 @@ From a business perspective, we are tasked with identifying key drivers for used
  * Dealerships want to have good understanding of what price should they pay for a certain car with certain features, in order to maximize their ability to make profit by buying cars under market value and making profit.
  * Dealerships want to identify which used cars they should stay away from.
 
+ Assess Situation -  Assumptions:
+* Normally, car year and odometer are the leading factors when assesing used car price. That should suggest that entries without this data pieces should be removed, since we do not want to artificially impute this data, which can lead to inaccurate predictions.
+* Used cars prices trend in two directions - prices normally go down when car year gets old, but then in some point old cars become collector cars and then the price of the used car strats to go up as the car is older behind that point.
+* The better the condition of the car is, the higher the expected used car price should be. Hence, records without condition data, should be treated cautiously.
  
 ### Data Understanding
 
@@ -53,7 +57,7 @@ After considering the business understanding, we want to get familiar with our d
 * We were left with 65K records after the data cleanup, which are `15.2%` from the original data set 
 
 
-### Modelling:
+### Modelling
 With our final datasets in hand - the one with data imputation, and the one with remove all NaNs - we'll now build some models. We'll build a number of different regression models (Ridge, LinearRegression and Lasso) with the price as the target. In building the models, we'll explore different hyper parameters and cross-validate our findings with K-Fold cros-validation on the training data. We'll also conduct a Holdout cross-validation on the best model the K-folded suggested with different sizes of hold-out set (80/20, 72/25, 70/30).
 We'll also explore feature selection and compare model performance results.
 
